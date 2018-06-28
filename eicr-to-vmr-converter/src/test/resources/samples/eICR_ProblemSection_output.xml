@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><!--Title: "Sample file for the PHCR Pertussis Report"
+    Version: Draft
+    Revision History: 11/09/2015  pre-publication
+  Specification: eICR CDA IG - C-CDA Templates Only
+This sample document was created Eric M Haas, Health eData Inc, on behalf of  HL7 PHER Working Group--><!-- The following sample document depicts a fictional character’s health summary. Any resemblance to a real person is coincidental. --><!-- To illustrate as many data elements as possible, the clinical scenario may not be entirely plausible. --><!--The schema file (CDA_SDTC.xsd) is available at http://gforge.hl7.org/svn/strucdoc/trunk/CDA_SDTC which contains all the SDWG approved extensions.--><?xml-stylesheet type="text/xsl" href="../transform/CDA_EICR.xsl"?><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 ../schemas/cda_schema/infrastructure/cda/CDA_SDTC.xsd">
+	<!--
+********************************************************
+CDA Header
+********************************************************
+-->
+	<!-- US Realm Header template -->
+	<realmCode code="US"/>
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- Conformant to Initial Public Health Case Report -->
+	<templateId extension="2015-11-28" root="2.16.840.1.113883.10.20.15.2"/>
+	<!-- globally unique document ID (extension) is scoped by vendor/software -->
+	<id extension="EICR-to-VMR TESTING" root="d179b5e3-c311-46ab-a617-bd3177c6be0d"/>
+	<!-- Document Code -->
+	<code code="55751-2" codeSystem="2.16.840.1.113883.6.1" displayName="Public Health Case report"/>
+	<title>Initial Public Health Case Report</title>
+	<effectiveTime value="20151107094421+0000"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" displayName="Normal"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<!--patient demographic information -->
+		<patientRole>
+			<!-- Fake root for sample. -->
+			<id extension="EICR-to-VMR TESTING" root="132f1d16-2f32-4c2a-9d32-cf9b24234926"/>
+			<!--SSN-->
+			<id extension="EICR-to-VMR TESTING" root="2231e6b7-cf3a-4366-a414-048e329a6703"/>
+			<!--Could have multiple addresses-->
+			<addr use="H">
+				<streetAddressLine>5101 Peachtree St NE</streetAddressLine>
+				<city>Atlanta</city>
+				<state>GA</state>
+				<postalCode>30302</postalCode>
+				<country>US</country>
+			</addr>
+			<addr use="WP">
+				<streetAddressLine>5101 Peachtree St NE</streetAddressLine>
+				<city>Atlanta</city>
+				<state>GA</state>
+				<postalCode>30302</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom use="HP" value="tel:+1-(404)555-1212"/>
+			<telecom use="WP" value="tel:+1(555)555-2003"/>
+			<patient>
+				<name use="L">
+					<given>John</given>
+					<given qualifier="IN">H</given>
+					<family>Stinn</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19741124"/>
+				<!--deceased indicator and deceased datetime go here-->
+				<sdtc:deceasedInd value="false"/>
+				<!--sdtc:deceasedTime value="20151128"/-->
+				<raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC" displayName="White"/>
+				<ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC" displayName="Not Hispanic or Latino"/>
+				<!--Guardian information-->
+				<guardian>
+					<addr use="H">
+						<streetAddressLine>1700 Dawes St</streetAddressLine>
+						<city>Lowell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom use="HP" value="tel:+1(999)555-1212"/>
+					<guardianPerson>
+						<name use="L">
+							<given>Ruth</given>
+							<given qualifier="IN">L</given>
+							<family>Stinn</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<languageCommunication>
+					<languageCode code="eng"/>
+					<!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
+					<modeCode code="ESP" codeSystem="2.16.840.1.113883.5.60" codeSystemName="LanguageAbilityMode" displayName="Expressed spoken"/>
+					<proficiencyLevelCode code="G" codeSystem="2.16.840.1.113883.5.61" codeSystemName="LanguageAbilityProficiency" displayName="Good"/>
+					<!-- Patient's preferred language -->
+					<preferenceInd value="true"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20151107094421+0000"/>
+		<!--Author/authenticator may be software or may be a provider such as
+"infection control professional".-->
+		<assignedAuthor>
+			<!--Id for authoring device - made up application OID-->
+			<id extension="EICR-to-VMR TESTING" root="593a04d7-f963-4296-bb01-13e6f83fa567"/>
+			<!--authoring device address - may or may not be same as facility where care provided for case-->
+			<addr>
+				<streetAddressLine>4646 Brown Rd</streetAddressLine>
+				<city>Salem</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom use="WP" value="tel:+1-(555)555-1212;ext=9998"/>
+			<assignedAuthoringDevice>
+				<manufacturerModelName displayName="Acme"/>
+				<softwareName displayName="Acme EHR"/>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<!-- The custodian of the CDA document is the generator of teh document -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id extension="EICR-to-VMR TESTING" root="228ef19d-259f-43bc-af11-1215a3b748c6"/>
+				<name>Salem Medical Center</name>
+				<telecom use="WP" value="tel:+1(555)555-1212"/>
+				<addr>
+					<streetAddressLine>4646 Brown Rd</streetAddressLine>
+					<city>Salem</city>
+					<state>MA</state>
+					<postalCode>02368</postalCode>
+					<country>US</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!--
+********************************************************
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis and laboratory results that trigger a case report t- table version identifer (= value set version) and code, code system oid, code system version, display name.  thypically these are SNOMED CT or ICD-9/10 or LOINC codes
+
+********************************************************
+-->
+	<documentationOf>
+		<serviceEvent classCode="CASE">
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="20150930" displayName="Pertussis (disorder)" sdtc:valueSetVersion="20151111"/>
+			<effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<!--
+********************************************************
+
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis  that trigger - code row identifer and code, code system oid, display name,  identifier would be unique for each table version. thypically these are SNOMED CT or ICD-9/10 codes
+
+		<documentationOf>
+		<serviceEvent classCode="CASE">
+		    <id root="87136C74-4E70-476F-950A-084D0DAA66B9"/>
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemVersion="20150930" displayName="Pertussis (disorder)"/>
+            <effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+
+********************************************************
+-->
+	<!--
+********************************************************
+ComponentOf -contains the provider and faclity infomation for the case-
+
+********************************************************
+-->
+	<componentOf>
+		<encompassingEncounter>
+			<!--encounter ID-->
+			<id extension="EICR-to-VMR TESTING" root="b21d545e-04bd-48aa-9fe6-d8b7a3c5ffa8"/>
+			<!--CPT-4 E/M codes - granular-->
+			<code code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Office outpatient visit 15 minutes">
+				<!--ActClassEncounterCodes - high level -->
+				<translation code="AMB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7 ActEncounterCode" displayName="Ambulatory"/>
+			</code>
+			<effectiveTime>
+				<low value="20151107"/>
+				<high value="20151107"/>
+			</effectiveTime>
+			<!--provider in charge of care when case reported-->
+			<responsibleParty>
+				<assignedEntity>
+					<id extension="EICR-to-VMR TESTING" root="04dba124-3cf3-4520-9096-59e5d7fdb30e"/>
+					<addr>
+						<streetAddressLine>2100 North Ave</streetAddressLine>
+						<city>Burlington</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom use="WP" value="tel:+1(555)555-1003"/>
+					<assignedPerson>
+						<name>
+							<given>MIchael</given>
+							<family>Coletta</family>
+							<suffix qualifier="AC">M.D.</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<name>BMass Doctors</name>
+						<addr>
+							<streetAddressLine>2100 North Ave</streetAddressLine>
+							<city>Burlington</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+			<!-- Information about facility where care was provided when case reported-->
+			<location>
+				<healthCareFacility>
+					<id extension="EICR-to-VMR TESTING" root="778e1624-27d7-4f07-b62d-8b427c051eb6"/>
+					<!--facility type-->
+					<code code="OF" codeSystem="2.16.840.1.113883.1.11.17660" displayName="Outpatient facility"/>
+					<!-- facility location within larger healthcare organization e.g Kaiser Vacaville within Kaiser North-->
+					<location>
+						<addr>
+							<streetAddressLine>4646 Brown Rd</streetAddressLine>
+							<city>Salem</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</location>
+					<!--facitiy contact information-->
+					<serviceProviderOrganization>
+						<name>Salem Medical Center</name>
+						<telecom use="WP" value="tel: 1+(555)-555-1212"/>
+						<addr>
+							<streetAddressLine>4646 Brown Rd</streetAddressLine>
+							<city>Salem</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component>
+		<structuredBody>
+			<!--
+
+********************************************************
+Encounters Section - Entries required
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.2.22.1"/>
+					<!-- Encounters Section - Entries required -->
+					<code code="46240-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of encounters"/>
+					<title>Encounters</title>
+					<text>
+						<paragraph>Encounter Type: Office outpatient visit
+							15 minutes<br/>Date: 20151107<br/>Hospital Unit: Urgent Care Center </paragraph>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Diagnosis</th>
+									<th>Date of Diagnosis</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Pertussis (disorder)</td>
+									<td>20151107</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<!-- Encounter Activities (V3)-->
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.49"/>
+							<id extension="EICR-to-VMR TESTING" root="b98a9220-3f6e-4a6c-9b32-071ef506fe0a"/>
+							<code code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Office outpatient visit 15 minutes"/>
+							<effectiveTime value="20151107"/>
+							<participant typeCode="LOC">
+								<participantRole classCode="SDLOC">
+									<!--Service Delivery Location  maps to Hospital Unit -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.32"/>
+									<code code="1160-1" codeSystem="2.16.840.1.113883.1.11.20275" codeSystemName="HealthcareServiceLocation" displayName="Urgent Care Center"/>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="XCRPT">
+								<!-- 3.24	Encounter Diagnosis (V3) -->
+								<act classCode="ACT" moodCode="EVN">
+									<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.80"/>
+									<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName=" DIAGNOSIS"/>
+									<entryRelationship typeCode="SUBJ">
+										<observation classCode="OBS" moodCode="EVN">
+											<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.4"/>
+											<!-- Encounter Dx  -->
+											<!-- Problem Observation -->
+											<id extension="EICR-to-VMR TESTING"
+												root="6350cbf3-9595-4b32-81b5-030e5e96bbd3"/>
+											<code code="29308-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Diagnosis">
+												<translation code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diagnosis"/>
+											</code>
+											<statusCode code="completed"/>
+											<!-- This same data may be represented in the Problem item -->
+											<effectiveTime>
+												<low value="20151107"/>
+											</effectiveTime>
+											<!-- diagnosis value maps to Diagnosis  -Test data is SNOMED but in practice this is probably ICD9/10 code -->
+											<value code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pertussis (disorder)" xsi:type="CD"/>
+										</observation>
+									</entryRelationship>
+								</act>
+							</entryRelationship>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+			<!--
+********************************************************
+History of Present Illness Section
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.4"/>
+					<code code="10164-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PRESENT ILLNESS"/>
+					<title>HISTORY OF PRESENT ILLNESS</title>
+					<text mediaType="text/x-hl7-text+xml">
+						<paragraph>Persistent Cough REPORTED starting on 2015/10/05 <br/> Whooping
+							Respiration not reported <br/> Paroxysms Of Coughing REPORTED starting
+							on 2015/11/04 <br/> Post-tussive vomiting not reported <br/>
+						</paragraph>
+					</text>
+				</section>
+			</component>
+			<!--
+********************************************************
+Medications Administered Section (V2) - Published
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId extension="2014-06-09" root="2.16.840.1.113883.10.20.22.2.38"/>
+					<code code="29549-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATIONS ADMINISTERED"/>
+					<title>MEDICATIONS ADMINISTERED</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Medication</th>
+									<th>Start Date</th>
+									<th>Stop Date</th>
+									<th>Dose</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Azithromycin 500 MG Oral Tablet</td>
+									<td>20151107</td>
+									<td>20151107</td>
+									<td>1</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<!-- ** MEDICATION ACTIVITY V2 ** -->
+						<substanceAdministration classCode="SBADM" moodCode="EVN">
+							<templateId extension="2014-06-09" root="2.16.840.1.113883.10.20.22.4.16"/>
+							<id extension="EICR-to-VMR TESTING" root="9fa74a85-3927-4747-8b45-b65e64c1fc8b"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="201511071160-0700" xsi:type="TS"/>
+							<routeCode code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL"/>
+							<doseQuantity value="1"/>
+							<consumable>
+								<manufacturedProduct classCode="MANU">
+									<!-- ** Medication information ** -->
+									<templateId extension="2014-06-09" root="2.16.840.1.113883.10.20.22.4.23"/>
+									<id extension="EICR-to-VMR TESTING" root="5cdeaf9a-182f-41fa-a734-e070619fd3f5"/>
+									<manufacturedMaterial>
+										<code code="248656" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Azithromycin 500 MG Oral Tablet"/>
+									</manufacturedMaterial>
+								</manufacturedProduct>
+							</consumable>
+						</substanceAdministration>
+					</entry>
+				</section>
+			</component>
+			<!--
+********************************************************
+Problems Section (entries required)
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.2.5.1"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+					<title>PROBLEMS</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Problem Type</th>
+									<th>Description</th>
+									<th>Effective Dates</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Symptom HL7.CCDAR2</td>
+									<td>Dark stools (finding)</td>
+									<td>20151101 -</td>
+								</tr>
+								<tr>
+									<td>Complaint HL7.CCDAR2</td>
+									<td>Paroxysmal cough (finding)</td>
+									<td>20151104 -</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.3"/>
+							<!-- Problem Concern Act (V3)  template -->
+							<id extension="EICR-to-VMR TESTING" root="aab96ba7-5bda-4476-8aa0-f9c6a9bd4ec1"/>
+							<code code="CONC" codeSystem="2.16.840.1.113883.5.6" displayName="Concern"/>
+							<!-- The statusCode represents the need to continue tracking the problem -->
+							<!-- This is of ongoing concern to the provider -->
+							<statusCode code="active"/>
+							<effectiveTime>
+								<!-- The low value represents when the problem was first recorded in the patient's chart -->
+								<low value="20151107"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Problem Observation (V2) ** -->
+									<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.4"/>
+									<id extension="EICR-to-VMR TESTING" root="3b515bc7-ff3e-4613-bd9d-1e1c4a1c7da0"/>
+									<code code="75325-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Symptom HL7.CCDAR2">
+										<translation code="418799008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Symptom"/>
+									</code>
+									<!-- The statusCode reflects the status of the observation itself -->
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- The low value reflects the date of onset -->
+										<low value="20151101"/>
+									</effectiveTime>
+									<value code="35064005" codeSystem="2.16.840.1.113883.6.96" displayName="Dark stools (finding)" xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Problem Observation (V2) ** -->
+									<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.4"/>
+									<id extension="EICR-to-VMR TESTING" root="3740d772-95c9-4ea1-8b81-201c289e4b52"/>
+									<code code="75322-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Complaint HL7.CCDAR2">
+										<translation code="409586006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Complaint"/>
+									</code>
+									<!-- The statusCode reflects the status of the observation itself -->
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- The low value reflects the date of onset -->
+										<low value="20151104"/>
+									</effectiveTime>
+									<value code="43025008" codeSystem="2.16.840.1.113883.6.96" displayName="Paroxysmal cough (finding)" xsi:type="CD"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+			<!--
+********************************************************
+Reason for Visit Section
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.22.2.12"/>
+					<code code="29299-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REASON FOR VISIT"/>
+					<title>REASON FOR VISIT</title>
+					<text>
+						<paragraph>Dark stools.</paragraph>
+					</text>
+				</section>
+			</component>
+			<!--
+********************************************************
+Results Section (V3)
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.2.3.1"/>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RELEVANT DIAGNOSTIC TESTS AND/OR LABORATORY DATA"/>
+					<title>Results</title>
+					<text>
+						<paragraph>Ordered
+							Test/Battery: CBC W Auto Differential panel in Blood </paragraph>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Test</th>
+									<th>Result Value</th>
+									<th>Reference Range</th>
+									<th>Interpretation</th>
+									<th>date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Hematocrit</td>
+									<td>35.3 %</td>
+									<td>34.9 - 44.5</td>
+									<td>L</td>
+									<td>20151107</td>
+								</tr>
+								<tr>
+									<td>Lymphocytes [#/Volume] in Blood by Automated count</td>
+									<td>5.2 10*3/uL</td>
+									<td>1.0 - 4.8</td>
+									<td>H</td>
+									<td>20151107</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+						<paragraph>Ordered
+							Test/Battery: B pert DNA XXX Ql PCR </paragraph>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Test</th>
+									<th>Result Value</th>
+									<th>Reference Range</th>
+									<th>Interpretation</th>
+									<th>date</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>B pert DNA XXX Ql PCR</td>
+									<td>Positive</td>
+									<td>Negative</td>
+									<td>A</td>
+									<td>20151107</td>
+								</tr>
+							</tbody>
+						</table>
+						<br/>
+					</text>
+					<entry typeCode="DRIV">
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId extension="2014-06-09" root="2.16.840.1.113883.10.20.22.4.1"/>
+							<id extension="EICR-to-VMR TESTING" root="a1ce8fc4-e9c5-41b1-841e-8be017966a61"/>
+							<code code="57021-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CBC W Auto Differential panel in Blood"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Result observation **There will be a lot more observations but I have only a couple -->
+									<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.2"/>
+									<id extension="EICR-to-VMR TESTING" root="d4012976-bc0d-4fdd-b0d4-af1717e1e694"/>
+									<code code="20570-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hematocrit"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20151107"/>
+									<value unit="%" value="35.3" xsi:type="PQ"/>
+									<interpretationCode code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+									<!--	 Should include referenceRange for all numeric results -->
+									<referenceRange>
+										<observationRange>
+											<text>Low</text>
+											<value xsi:type="IVL_PQ">
+												<low unit="%" value="34.9"/>
+												<high unit="%" value="44.5"/>
+											</value>
+											<interpretationCode code="L" codeSystem="2.16.840.1.113883.5.83"/>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Result observation **There will be a lot more observations but I have only a couple -->
+									<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.2"/>
+									<id extension="EICR-to-VMR TESTING" root="fee06105-92a6-43e9-8a9a-786c0e67cec7"/>
+									<code code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lymphocytes [#/​volume] in Blood by Automated count"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20151107"/>
+									<value unit="10*3/uL" value="5.2" xsi:type="PQ"/>
+									<interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78"/>
+									<!--	 Should include referenceRange for all numeric results -->
+									<referenceRange>
+										<observationRange>
+											<text>Low</text>
+											<value xsi:type="IVL_PQ">
+												<low unit="10*3/uL" value="1.0"/>
+												<high unit="10*3/uL" value="4.8"/>
+											</value>
+											<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry>
+						<organizer classCode="BATTERY" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+							<id extension="EICR-to-VMR TESTING" root="9a5b6359-017f-4c4e-b49d-58195ef4d48f"/>
+							<!--This is a battey of one and same a observation code-->
+							<code code="23826-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="B pert DNA XXX Ql PCR"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="20151107"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+									<id extension="EICR-to-VMR TESTING" root="07762644-a666-4391-9596-a40e5fdfd764"/>
+									<code code="23826-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="B pert DNA XXX Ql PCR"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20151107"/>
+									<value code="10828004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Positive" xsi:type="CO"/>
+									<interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83"/>
+									<referenceRange>
+										<observationRange>
+											<text>A negative value is a normal result</text>
+											<value code="260385009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Negative" xsi:type="CO"/>
+											<!-- This interpretation code denotes that this reference range is for normal results. This is not the interpretation a specific patient value-->
+											<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+										</observationRange>
+									</referenceRange>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<!--
+********************************************************
+Social History Section (V3)
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.2.17"/>
+					<code code="29762-2" codeSystem="2.16.840.1.113883.6.1" displayName="Social History"/>
+					<title>SOCIAL HISTORY</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Social History Element</th>
+									<th>Description</th>
+									<th>Effective Dates</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Employment detail</td>
+									<td>Centers for Disease Control 1 Peachtree St South Atlanta,GA
+										404-564-7865</td>
+									<td>1993 -</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry>
+						<observation classCode="OBS" moodCode="EVN">
+							<!-- Social history observation V2-->
+							<templateId extension="2015-08-01" root="2.16.840.1.113883.10.20.22.4.38"/>
+							<id extension="EICR-to-VMR TESTING" root="c1a6e64b-a9be-422e-a2cf-cdc2d08dba2a"/>
+							<code code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment detail">
+								<translation code="11295-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Current employment - Reported"/>
+							</code>
+							<statusCode code="completed"/>
+							<effectiveTime>
+								<low value="19930101"/>
+							</effectiveTime>
+							<value xsi:type="ST">Centers for Disease Control 1 Peachtree St South
+								Atlanta,GA 404-564-7865 </value>
+						</observation>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Title: "Sample file for the PHCR Pertussis Report"
+    Version: Draft
+    Revision History: 11/09/2015  pre-publication
+  Specification: eICR CDA IG - C-CDA Templates Only
+This sample document was created Eric M Haas, Health eData Inc, on behalf of  HL7 PHER Working Group-->
+<!-- The following sample document depicts a fictional character’s health summary. Any resemblance to a real person is coincidental. -->
+<!-- To illustrate as many data elements as possible, the clinical scenario may not be entirely plausible. -->
+<!--The schema file (CDA_SDTC.xsd) is available at http://gforge.hl7.org/svn/strucdoc/trunk/CDA_SDTC which contains all the SDWG approved extensions.-->
+<?xml-stylesheet type="text/xsl" href="../transform/CDA_EICR.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../../../../../../eicr-to-vmr-converter/eicr-to-vmr-converter/src/test/resources/schemas/cda_schema/infrastructure/cda/CDA_SDTC.xsd"
+ xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc">
+	<!--
+********************************************************
+CDA Header
+********************************************************
+-->
+	<!-- US Realm Header template -->
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- Conformant to Initial Public Health Case Report -->
+	<templateId root="2.16.840.1.113883.10.20.15.2" extension="2015-11-28"/>
+	<!-- globally unique document ID (extension) is scoped by vendor/software -->
+	<id root="12345"/>
+	<!-- Document Code -->
+	<code code="55751-2" codeSystem="2.16.840.1.113883.6.1" displayName="Public Health Case report"/>
+	<title>Initial Public Health Case Report</title>
+	<effectiveTime value="20151107094421+0000"/>
+	<confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<!--patient demographic information -->
+		<patientRole>
+			<id root="12345"/>
+			<!--Could have multiple addresses-->
+			<addr use="H">
+				<streetAddressLine>5101 Peachtree St NE</streetAddressLine>
+				<city>Atlanta</city>
+				<state>GA</state>
+				<postalCode>30302</postalCode>
+				<country>US</country>
+			</addr>
+			<addr use="WP">
+				<streetAddressLine>5101 Peachtree St NE</streetAddressLine>
+				<city>Atlanta</city>
+				<state>GA</state>
+				<postalCode>30302</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom value="tel:+1-(404)555-1212" use="HP"/>
+			<telecom value="tel:+1(555)555-2003" use="WP"/>
+			<patient>
+				<name use="L">
+					<given>John</given>
+					<given qualifier="IN">H</given>
+					<family>Stinn</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19741124"/>
+				<!--deceased indicator and deceased datetime go here-->
+				<sdtc:deceasedInd value="false"/>
+				<!--sdtc:deceasedTime value="20151128"/-->
+				<raceCode code="2106-3" displayName="White" codeSystem="2.16.840.1.113883.6.238"
+					codeSystemName="Race &amp; Ethnicity - CDC"/>
+				<ethnicGroupCode code="2186-5" displayName="Not Hispanic or Latino"
+					codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
+				<!--Guardian information-->
+				<guardian>
+					<addr use="H">
+						<streetAddressLine>1700 Dawes St</streetAddressLine>
+						<city>Lowell</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom value="tel:+1(999)555-1212" use="HP"/>
+					<guardianPerson>
+						<name use="L">
+							<given>Ruth</given>
+							<given qualifier="IN">L</given>
+							<family>Stinn</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<languageCommunication>
+					<languageCode code="eng"/>
+					<!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
+					<modeCode code="ESP" displayName="Expressed spoken"
+						codeSystem="2.16.840.1.113883.5.60" codeSystemName="LanguageAbilityMode"/>
+					<proficiencyLevelCode code="G" displayName="Good"
+						codeSystem="2.16.840.1.113883.5.61"
+						codeSystemName="LanguageAbilityProficiency"/>
+					<!-- Patient's preferred language -->
+					<preferenceInd value="true"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20151107094421+0000"/>
+		<!--Author/authenticator may be software or may be a provider such as
+"infection control professional".-->
+		<assignedAuthor>
+			<!--Id for authoring device - made up application OID-->
+			<id root="12345"/>
+			<!--authoring device address - may or may not be same as facility where care provided for case-->
+			<addr>
+				<streetAddressLine>4646 Brown Rd</streetAddressLine>
+				<city>Salem</city>
+				<state>MA</state>
+				<postalCode>02368</postalCode>
+				<country>US</country>
+			</addr>
+			<telecom value="tel:+1-(555)555-1212;ext=9998" use="WP"/>
+			<assignedAuthoringDevice>
+				<manufacturerModelName displayName="Acme"/>
+				<softwareName displayName="Acme EHR"/>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<!-- The custodian of the CDA document is the generator of teh document -->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="12345"/>
+				<name>Salem Medical Center</name>
+				<telecom use="WP" value="tel:+1(555)555-1212"/>
+				<addr>
+					<streetAddressLine>4646 Brown Rd</streetAddressLine>
+					<city>Salem</city>
+					<state>MA</state>
+					<postalCode>02368</postalCode>
+					<country>US</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!--
+********************************************************
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis and laboratory results that trigger a case report t- table version identifer (= value set version) and code, code system oid, code system version, display name.  thypically these are SNOMED CT or ICD-9/10 or LOINC codes
+
+********************************************************
+-->
+	<documentationOf>
+		<serviceEvent classCode="CASE">
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"
+				codeSystemVersion="20150930" displayName="Pertussis (disorder)"
+				sdtc:valueSetVersion="20151111"/>
+			<effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<!--
+********************************************************
+
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis  that trigger - code row identifer and code, code system oid, display name,  identifier would be unique for each table version. thypically these are SNOMED CT or ICD-9/10 codes
+
+		<documentationOf>
+		<serviceEvent classCode="CASE">
+		    <id root="87136C74-4E70-476F-950A-084D0DAA66B9"/>
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemVersion="20150930" displayName="Pertussis (disorder)"/>
+            <effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+
+********************************************************
+-->
+	<!--
+********************************************************
+ComponentOf -contains the provider and faclity infomation for the case-
+
+********************************************************
+-->
+	<componentOf>
+		<encompassingEncounter>
+			<!--encounter ID-->
+			<id root="12345"/>
+			<!--CPT-4 E/M codes - granular-->
+			<code code="99213" displayName="Office outpatient visit 15 minutes"
+				codeSystemName="CPT-4" codeSystem="2.16.840.1.113883.6.12">
+				<!--ActClassEncounterCodes - high level -->
+				<translation code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatory"
+					codeSystemName="HL7 ActEncounterCode"/>
+			</code>
+			<effectiveTime>
+				<low value="20151107"/>
+				<high value="20151107"/>
+			</effectiveTime>
+			<!--provider in charge of care when case reported-->
+			<responsibleParty>
+				<assignedEntity>
+					<id root="12345"/>
+					<addr>
+						<streetAddressLine>2100 North Ave</streetAddressLine>
+						<city>Burlington</city>
+						<state>MA</state>
+						<postalCode>02368</postalCode>
+						<country>US</country>
+					</addr>
+					<telecom use="WP" value="tel:+1(555)555-1003"/>
+					<assignedPerson>
+						<name>
+							<given>MIchael</given>
+							<family>Coletta</family>
+							<suffix qualifier="AC">M.D.</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization>
+						<name>BMass Doctors</name>
+						<addr>
+							<streetAddressLine>2100 North Ave</streetAddressLine>
+							<city>Burlington</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+			<!-- Information about facility where care was provided when case reported-->
+			<location>
+				<healthCareFacility>
+					<id root="12345"/>
+					<!--facility type-->
+					<code code="RADDX" codeSystem="2.16.840.1.113883.1.11.17660"
+						displayName="Outpatient facility"/>
+					<!-- facility location within larger healthcare organization e.g Kaiser Vacaville within Kaiser North-->
+					<location>
+						<addr>
+							<streetAddressLine>4646 Brown Rd</streetAddressLine>
+							<city>Salem</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</location>
+					<!--facitiy contact information-->
+					<serviceProviderOrganization>
+						<name>Salem Medical Center</name>
+						<telecom use="WP" value="tel: 1+(555)-555-1212"/>
+						<addr>
+							<streetAddressLine>4646 Brown Rd</streetAddressLine>
+							<city>Salem</city>
+							<state>MA</state>
+							<postalCode>02368</postalCode>
+							<country>US</country>
+						</addr>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component>
+		<structuredBody>
+
+			<!--
+********************************************************
+Problems Section (entries required)
+********************************************************
+-->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.22.2.5.1" extension="2015-08-01"/>
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="PROBLEM LIST"/>
+					<title>PROBLEMS</title>
+					<text>
+						<table xmlns:t="urn:hl7-org:v3" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Problem Type</th>
+									<th>Description</th>
+									<th>Effective Dates</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Symptom HL7.CCDAR2</td>
+									<td>Dark stools (finding)</td>
+									<td>20151101 -</td>
+								</tr>
+								<tr>
+									<td>Complaint HL7.CCDAR2</td>
+									<td>Paroxysmal cough (finding)</td>
+									<td>20151104 -</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.22.4.3" extension="2015-08-01"/>
+							<!-- Problem Concern Act (V3)  template -->
+							<id root="12345"/>
+							<code code="CONC" codeSystem="2.16.840.1.113883.5.6"
+								displayName="Concern"/>
+							<!-- The statusCode represents the need to continue tracking the problem -->
+							<!-- This is of ongoing concern to the provider -->
+							<statusCode code="active"/>
+							<effectiveTime>
+								<!-- The low value represents when the problem was first recorded in the patient's chart -->
+								<low value="20151107"/>
+							</effectiveTime>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Problem Observation (V2) ** -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"
+										extension="2015-08-01"/>
+									<id root="12345"/>
+									<code code="75325-1" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Symptom HL7.CCDAR2">
+										<translation code="418799008" displayName="Symptom"
+											codeSystem="2.16.840.1.113883.6.96"
+											codeSystemName="SNOMED CT"/>
+									</code>
+									<!-- The statusCode reflects the status of the observation itself -->
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- The low value reflects the date of onset -->
+										<low value="20151101"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="35064005"
+										codeSystem="2.16.840.1.113883.6.96"
+										displayName="Dark stools (finding)"/>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="SUBJ">
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- ** Problem Observation (V2) ** -->
+									<templateId root="2.16.840.1.113883.10.20.22.4.4"
+										extension="2015-08-01"/>
+									<id root="12345"/>
+									<code code="75322-8" codeSystem="2.16.840.1.113883.6.1"
+										codeSystemName="LOINC" displayName="Complaint HL7.CCDAR2">
+										<translation code="409586006" displayName="Complaint"
+											codeSystem="2.16.840.1.113883.6.96"
+											codeSystemName="SNOMED CT"/>
+									</code>
+									<!-- The statusCode reflects the status of the observation itself -->
+									<statusCode code="completed"/>
+									<effectiveTime>
+										<!-- The low value reflects the date of onset -->
+										<low value="20151104"/>
+									</effectiveTime>
+									<value xsi:type="CD" code="27836007"
+										codeSystem="2.16.840.1.113883.6.96"
+										displayName="Pertussis (disorder)"/>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

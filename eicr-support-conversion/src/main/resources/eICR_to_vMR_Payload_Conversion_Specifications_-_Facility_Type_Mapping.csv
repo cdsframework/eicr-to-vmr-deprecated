@@ -1,0 +1,126 @@
+HL7 Level,HL7 Facility Code,HL7 Facility Code Display,HL7 Description,vMR cdsSystemUserType,vMR entityType
+4,DX,Diagnostics or therapeutics unit,A practice setting where diagnostic procedures or therapeutic interventions are performed,PROVIDER_FACILITY,FAC
+5,CVDX,Cardiovascular diagnostics or therapeutics unit,"A practice setting where cardiovascular diagnostic procedures or therapeutic interventions are performed (e.g. cardiac catheterization lab, echocardiography suite)",PROVIDER_FACILITY,FAC
+6,CATH,Cardiac catheterization lab,Cardiac catheterization lab,LAB_FACILITY,LAB
+6,ECHO,Echocardiography lab,Echocardiography lab,LAB_FACILITY,LAB
+5,GIDX,Gastroenterology diagnostics or therapeutics lab,A practice setting where GI procedures (such as endoscopies) are performed,LAB_FACILITY,LAB
+6,ENDOS,Endoscopy lab,(X12N 261QD0000N),LAB_FACILITY,LAB
+5,RADDX,Radiology diagnostics or therapeutics unit,A practice setting where radiology services (diagnostic or therapeutic) are provided (X12N 261QR0200N),PROVIDER_FACILITY,FAC
+6,RADO,Radiation oncology unit,(X12N 261QX0203N),PROVIDER_FACILITY,FAC
+6,RNEU,Neuroradiology unit,Neuroradiology unit,PROVIDER_FACILITY,FAC
+4,HOSP,Hospital,"An acute care institution that provides medical, surgical, or psychiatric care and treatment for the sick or the injured.",PROVIDER_FACILITY,FAC
+5,CHR,Chronic Care Facility,"(1) A hospital including a physical plant and personnel that provides multidisciplinary diagnosis and treatment for diseases that have one or more of the following characteristics: is permanent; leaves residual disability; is caused by nonreversible pathological alteration; requires special training of the patient for rehabilitation; and/or may be expected to require a long period of supervision or care. In addition, patients require the safety, security, and shelter of these specialized inpatient or partial hospitalization settings. (2) A hospital that provides medical and skilled nursing services to patients with long-term illnesses who are not in an acute phase but who require an intensity of services not available in nursing homes",PROVIDER_FACILITY,FAC
+5,GACH,Hospitals; General Acute Care Hospital,(X12N 282N00000N),PROVIDER_FACILITY,FAC
+5,MHSP,Military Hospital,A health care facility operated by the Department of Defense or other military operation.,PROVIDER_FACILITY,FAC
+5,PSYCHF,Psychatric Care Facility,Healthcare facility that cares for patients with psychiatric illness(s).,PROVIDER_FACILITY,FAC
+5,RH,Rehabilitation hospital,(X12N 283X00000N),PROVIDER_FACILITY,FAC
+6,RHAT,addiction treatment center,Description: A location that plays the role of delivering services which may include life training and/or social support to people with addictions.,PROVIDER_FACILITY,FAC
+6,RHII,intellectual impairment center,"Description: A location that plays the role of delivering services which may include adaptation, rehabilitation and social integration services for people with intellectual and/or pervasive development disorders such as autism or severe behavior disorder.",PROVIDER_FACILITY,FAC
+6,RHMAD,parents with adjustment difficulties center,Description: A location that plays the role of delivering services which may social support services for adolescents who are pregnant or have child and are experiencing adaptation issues/difficulties in their current or eventual parenting role.,PROVIDER_FACILITY,FAC
+6,RHPI,physical impairment center,"Description: A location that plays the role of delivering services which may include adaptation, rehabilitation and social integration services for people with physical impairments.",PROVIDER_FACILITY,FAC
+7,RHPIH,physical impairment - hearing center,Description: A location that plays the role of delivering services for people with hearing impairments.,PROVIDER_FACILITY,FAC
+7,RHPIMS,physical impairment - motor skills center,Description: A location that plays the role of delivering services for people with motor skill impairments.,PROVIDER_FACILITY,FAC
+7,RHPIVS,physical impairment - visual skills center,Description: A location that plays the role of delivering services for people with visual skill impairments.,PROVIDER_FACILITY,FAC
+6,RHYAD,youths with adjustment difficulties center,"Description: A location that plays the role of delivering services which may include life training and/or social support services for the adaption, rehabilitation and social integration of youths with adjustment difficulties.",PROVIDER_FACILITY,FAC
+4,HU,Hospital unit,Hospital unit,PROVIDER_FACILITY,FAC
+5,BMTU,Bone marrow transplant unit,Bone marrow transplant unit,PROVIDER_FACILITY,FAC
+5,CCU,Coronary care unit,Coronary care unit,PROVIDER_FACILITY,FAC
+5,CHEST,Chest unit,A specialty unit in hospital that focuses on chronic respirator patients and pulmonary failure,PROVIDER_FACILITY,FAC
+5,EPIL,Epilepsy unit,Epilepsy unit,PROVIDER_FACILITY,FAC
+5,ER,Emergency room,The section of a health care facility for providing rapid treatment to victims of sudden illness or trauma.,PROVIDER_FACILITY,FAC
+6,ETU,Emergency trauma unit,Emergency trauma unit,PROVIDER_FACILITY,FAC
+5,HD,Hemodialysis unit,Hemodialysis unit,PROVIDER_FACILITY,FAC
+5,HLAB,hospital laboratory,"Description: A location that plays the role of delivering services which may include tests done based on clinical specimens to get health information about a patient as pertaining to the diagnosis, treatment and prevention of disease. Hospital laboratories may be further divided into specialized units such as Anatomic Pathology, Microbiology, and Biochemistry.",LAB_FACILITY,LAB
+6,INLAB,inpatient laboratory,"Description: A location that plays the role of delivering services which may include tests are done on clinical specimens to get health information about a patient pertaining to the diagnosis, treatment, and prevention of disease for a hospital visit longer than one day.",LAB_FACILITY,LAB
+6,OUTLAB,outpatient laboratory,"Description: A location that plays the role of delivering services which may include tests are done on clinical specimens to get health information about a patient pertaining to the diagnosis, treatment, and prevention of disease for same day visits.",LAB_FACILITY,LAB
+5,HRAD,radiology unit,"Description: A location that plays the role of delivering services which may include the branch of medicine that uses ionizing and non-ionizing radiation to diagnose and treat diseases. The radiology unit may be further divided into subspecialties such as Imaging, Cardiovascular, Thoracic, and Ultrasound.",PROVIDER_FACILITY,FAC
+5,HUSCS,specimen collection site,"Description: A location that plays the role of delivering services which may include collecting specimens and/or samples from patients for laboratory testing purposes, but does not perform any tests or analysis functions.",PROVIDER_FACILITY,FAC
+5,ICU,Intensive care unit,Intensive care unit,PROVIDER_FACILITY,FAC
+6,PEDICU,Pediatric intensive care unit,Pediatric intensive care unit,PROVIDER_FACILITY,FAC
+7,PEDNICU,Pediatric neonatal intensive care unit,Pediatric neonatal intensive care unit,PROVIDER_FACILITY,FAC
+5,INPHARM,inpatient pharmacy,"Description: A location that plays the role of delivering services which may include providing judicious, safe, efficacious, appropriate and cost effective use of medicines for treatment of patients for visits longer than one day. The distinction between inpatient pharmacies and retail (or outpatient) pharmacies is that they are part of a patient's continuity of care while staying in the hospital.",PROVIDER_FACILITY,FAC
+5,MBL,medical laboratory,"Description: A location that plays the role of delivering services which include biochemistry, hematology, microbiology, immunochemistry, and toxicology.",,LAB
+5,NCCS,Neurology critical care and stroke unit,Neurology critical care and stroke unit,PROVIDER_FACILITY,FAC
+5,NS,Neurosurgery unit,Neurosurgery unit,PROVIDER_FACILITY,FAC
+5,OUTPHARM,outpatient pharmacy,"Description: A location that plays the role of delivering services which may include providing judicious, safe, efficacious, appropriate and cost effective use of medicines for treatment of patients for outpatient visits and may also be used for discharge prescriptions.",PROVIDER_FACILITY,FAC
+5,PEDU,Pediatric unit,Pediatric unit,PROVIDER_FACILITY,FAC
+5,PHU,Psychiatric hospital unit,(X12N 273R00000N),PROVIDER_FACILITY,FAC
+5,RHU,Rehabilitation hospital unit,Rehabilitation hospital unit,PROVIDER_FACILITY,FAC
+5,SLEEP,Sleep disorders unit,(X12N 261QA1200N),PROVIDER_FACILITY,FAC
+4,NCCF,Nursing or custodial care facility,Nursing or custodial care facility,PROVIDER_FACILITY,FAC
+5,SNF,Skilled nursing facility,(X12N 314000000N),PROVIDER_FACILITY,FAC
+4,OF,Outpatient facility,Outpatient facility,PROVIDER_FACILITY,FAC
+5,ALL,Allergy clinic,Allergy clinic,PROVIDER_FACILITY,FAC
+5,AMPUT,Amputee clinic,Amputee clinic,PROVIDER_FACILITY,FAC
+5,BMTC,Bone marrow transplant clinic,Bone marrow transplant clinic,PROVIDER_FACILITY,FAC
+5,BREAST,Breast clinic,Breast clinic,PROVIDER_FACILITY,FAC
+5,CANC,Child and adolescent neurology clinic,Child and adolescent neurology clinic,PROVIDER_FACILITY,FAC
+5,CAPC,Child and adolescent psychiatry clinic,Child and adolescent psychiatry clinic,PROVIDER_FACILITY,FAC
+5,CARD,Ambulatory Health Care Facilities; Clinic/Center; Rehabilitation: Cardiac Facilities,Ambulatory Health Care Facilities; Clinic/Center; Rehabilitation: Cardiac Facilities,PROVIDER_FACILITY,FAC
+6,PEDCARD,Pediatric cardiology clinic,Pediatric cardiology clinic,PROVIDER_FACILITY,FAC
+5,COAG,Coagulation clinic,Coagulation clinic,PROVIDER_FACILITY,FAC
+5,CRS,Colon and rectal surgery clinic,Colon and rectal surgery clinic,PROVIDER_FACILITY,FAC
+5,DERM,Dermatology clinic,Dermatology clinic,PROVIDER_FACILITY,FAC
+5,ENDO,Endocrinology clinic,Endocrinology clinic,PROVIDER_FACILITY,FAC
+6,PEDE,Pediatric endocrinology clinic,Pediatric endocrinology clinic,PROVIDER_FACILITY,FAC
+5,ENT,Otorhinolaryngology clinic,Otorhinolaryngology clinic,PROVIDER_FACILITY,FAC
+5,FMC,Family medicine clinic,Family medicine clinic,PROVIDER_FACILITY,FAC
+5,GI,Gastroenterology clinic,Gastroenterology clinic,PROVIDER_FACILITY,FAC
+6,PEDGI,Pediatric gastroenterology clinic,Pediatric gastroenterology clinic,PROVIDER_FACILITY,FAC
+5,GIM,General internal medicine clinic,General internal medicine clinic,PROVIDER_FACILITY,FAC
+5,GYN,Gynecology clinic,Gynecology clinic,PROVIDER_FACILITY,FAC
+5,HEM,Hematology clinic,Hematology clinic,PROVIDER_FACILITY,FAC
+6,PEDHEM,Pediatric hematology clinic,Pediatric hematology clinic,PROVIDER_FACILITY,FAC
+5,HTN,Hypertension clinic,Hypertension clinic,PROVIDER_FACILITY,FAC
+5,IEC,Impairment evaluation center,Focuses on assessing disability,PROVIDER_FACILITY,FAC
+5,INFD,Infectious disease clinic,Infectious disease clinic,PROVIDER_FACILITY,FAC
+6,PEDID,Pediatric infectious disease clinic,Pediatric infectious disease clinic,PROVIDER_FACILITY,FAC
+5,INV,Infertility clinic,Infertility clinic,PROVIDER_FACILITY,FAC
+5,LYMPH,Lympedema clinic,Lympedema clinic,PROVIDER_FACILITY,FAC
+5,MGEN,Medical genetics clinic,Medical genetics clinic,PROVIDER_FACILITY,FAC
+5,NEPH,Nephrology clinic,Nephrology clinic,PROVIDER_FACILITY,FAC
+6,PEDNEPH,Pediatric nephrology clinic,Pediatric nephrology clinic,PROVIDER_FACILITY,FAC
+5,NEUR,Neurology clinic,Neurology clinic,PROVIDER_FACILITY,FAC
+5,OB,Obstetrics clinic,Obstetrics clinic,PROVIDER_FACILITY,FAC
+5,OMS,Oral and maxillofacial surgery clinic,Oral and maxillofacial surgery clinic,PROVIDER_FACILITY,FAC
+5,ONCL,Medical oncology clinic,Medical oncology clinic,PROVIDER_FACILITY,FAC
+6,PEDHO,Pediatric oncology clinic,Pediatric oncology clinic,PROVIDER_FACILITY,FAC
+5,OPH,Opthalmology clinic,Opthalmology clinic,PROVIDER_FACILITY,FAC
+5,OPTC,optometry clinic,"Description: A location that plays the role of delivering services which may include examination, diagnosis, treatment, management, and prevention of diseases and disorders of the eye as well as prescribing and fitting appropriate corrective lenses (glasses or contact lenses) as needed. Optometry clinics may also provide tests for visual field screening, measuring intra-ocular pressure and ophthalmoscopy, as and when required.",PROVIDER_FACILITY,FAC
+5,ORTHO,Orthopedics clinic,Orthopedics clinic,PROVIDER_FACILITY,FAC
+6,HAND,Hand clinic,Hand clinic,PROVIDER_FACILITY,FAC
+5,PAINCL,Pain clinic,(X12N 261QP3300N),PROVIDER_FACILITY,FAC
+5,PC,Primary care clinic,(X12N 261QP2300N),PROVIDER_FACILITY,FAC
+5,PEDC,Pediatrics clinic,Pediatrics clinic,PROVIDER_FACILITY,FAC
+6,PEDRHEUM,Pediatric rheumatology clinic,Pediatric rheumatology clinic,PROVIDER_FACILITY,FAC
+5,POD,Podiatry clinic,(X12N 261QP1100N),PROVIDER_FACILITY,FAC
+5,PREV,Preventive medicine clinic,Preventive medicine clinic,PROVIDER_FACILITY,FAC
+5,PROCTO,Proctology clinic,Proctology clinic,PROVIDER_FACILITY,FAC
+5,PROFF,Provider's Office,"Location where healthcare service was delivered, identified as the healthcare provider's practice office.",PROVIDER_FACILITY,FAC
+5,PROS,Prosthodontics clinic,Prosthodontics clinic,PROVIDER_FACILITY,FAC
+5,PSI,Psychology clinic,Psychology clinic,PROVIDER_FACILITY,FAC
+5,PSY,Psychiatry clinic,Psychiatry clinic,PROVIDER_FACILITY,FAC
+5,RHEUM,Rheumatology clinic,Rheumatology clinic,PROVIDER_FACILITY,FAC
+5,SPMED,Sports medicine clinic,Sports medicine clinic,PROVIDER_FACILITY,FAC
+5,SU,Surgery clinic,Surgery clinic,PROVIDER_FACILITY,FAC
+6,PLS,Plastic surgery clinic,Plastic surgery clinic,PROVIDER_FACILITY,FAC
+6,URO,Urology clinic,Urology clinic,PROVIDER_FACILITY,FAC
+5,TR,Transplant clinic,Transplant clinic,PROVIDER_FACILITY,FAC
+5,TRAVEL,Travel and geographic medicine clinic,Travel and geographic medicine clinic,PROVIDER_FACILITY,FAC
+5,WND,Wound clinic,Wound clinic,PROVIDER_FACILITY,FAC
+4,RTF,Residential treatment facility,Residential treatment facility,PROVIDER_FACILITY,FAC
+5,PRC,Pain rehabilitation center,Pain rehabilitation center,PROVIDER_FACILITY,FAC
+5,SURF,Substance use rehabilitation facility,(X12N 324500000N),PROVIDER_FACILITY,FAC
+4,DADDR,Delivery Address,Location address where medical supplies were transported to for use.,PROVIDER_FACILITY,FAC
+4,MOBL,Mobile Unit,Location (mobile) where healthcare service was delivered.,PROVIDER_FACILITY,FAC
+5,AMB,Ambulance,"Location (mobile) where healthcare service was delivered, identified specifically as an ambulance.",PROVIDER_FACILITY,FAC
+4,PHARM,Pharmacy,"Location where healthcare service was delivered, identified as a pharmacy.",PROVIDER_FACILITY,FAC
+3,ACC,accident site,"Location of an accident where healthcare service was delivered, such as a roadside.",PROVIDER_FACILITY,FAC
+3,COMM,Community Location,Community location where healthcare is delivered.,PROVIDER_FACILITY,FAC
+4,CSC,community service center,"Description: A location that plays the role of delivering services which may include providing front-line services to the population of a defined geographic area such as: healthcare services and social services, preventive or curative, rehabilitation or reintegration.",PROVIDER_FACILITY,FAC
+3,PTRES,Patient's Residence,location where healthcare was delivered which is the residence of the Patient.,PROVIDER_FACILITY,FAC
+3,SCHOOL,school,"Location where healthcare service was delivered, identified as a school or educational facility.",PROVIDER_FACILITY,FAC
+3,UPC,underage protection center,"Description: A location that plays the role of delivering services which may include: social emergency services required for a young person as required under any jurisdictional youth laws, child placement, and family mediation in the defined geographical area the SDL is responsible for. It may provide expertise in a judiciary setting on child custody, adoption and biological history research.",PROVIDER_FACILITY,FAC
+3,WORK,work site,"Location where healthcare service was delivered, identified as a work place.",PROVIDER_FACILITY,FAC
+3,257622000,Healthcare Facility,Healthcare Facility,PROVIDER_FACILITY,FAC
+,,"<Other, Unknown, Blank Facility Type>",,PROVIDER_FACILITY,FAC

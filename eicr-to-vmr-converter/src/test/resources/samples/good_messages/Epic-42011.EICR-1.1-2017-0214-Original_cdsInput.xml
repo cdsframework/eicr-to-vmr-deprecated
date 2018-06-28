@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="1.2.5.8.2.7" extension="6e083668-afa4-44ac-9c3e-5eb647f3c35b"/>
+            <demographics>
+                <birthTime value="19900422"/>
+                <gender code="F" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="HP">
+                    <part type="SAL" value="861 East 1300 South"/>
+                    <part type="CTY" value="Salt Lake City"/>
+                    <part type="STA" value="UT"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-801-588-3498" use="HP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="1.2.840.114350.1.13.321.1.7.2.686980" extension="cb1bd148-aeb6-42fd-87b6-fea79d76f9a3"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="288 North 1460 West"/>
+                        <part type="CTY" value="Salt Lake City"/>
+                        <part type="STA" value="UT"/>
+                        <part type="ZIP" value="84116"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <observationResults/>
+                <observationOrders>
+                    <observationOrder>
+                        <id root="1.2.840.114350.1.13.321.1.7.2.798268" extension="26f2df20-190d-4ba0-9121-81979fc23124"/>
+                        <observationFocus code="80824-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ZIKA VIRUS IGM AB (PRESENCE) IN SERUM BY IMMUNOASSAY"/>
+                        <orderEventTime high="20161212" low="20161212"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="1.2.840.114350.1.13.321.1.7.6.798268.2000" extension="43759655-5ad7-4301-94ba-e241c034ef0c"/>
+<observationFocus code="80824-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Zika virus IgM Ab (Presence) in Serum by Immunoassay"/>
+<observationEventTime high="20161212" low="20161212"/>
+<observationValue>
+    <concept code="10828004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Positive"/>
+</observationValue>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                    <observationOrder>
+                        <id root="1.2.840.114350.1.13.321.1.7.2.798268" extension="73b6b44f-471b-4723-8396-79ef73fc6824"/>
+                        <observationFocus code="29663-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="DENGUE VIRUS IGM AB (PRESENCE) IN SERUM BY IMMUNOASSAY"/>
+                        <orderEventTime high="20161212" low="20161212"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="1.2.840.114350.1.13.321.1.7.6.798268.2000" extension="d6c99600-f78b-47d6-93f9-08e0558d14e3"/>
+<observationFocus code="29663-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dengue virus IgM Ab (Presence) in Serum by Immunoassay"/>
+<observationEventTime high="20161212" low="20161212"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                </observationOrders>
+                <problems>
+                    <problem>
+                        <templateId/>
+                        <id root="1.2.840.114350.1.13.321.1.7.2.768076" extension="39f97324-9af3-463d-b14b-f8b1e04cd245"/>
+                        <problemCode code="77386006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnant"/>
+                        <problemEffectiveTime high="20170206" low="20170206"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.88.12.80.68"/>
+                    </problem>
+                    <problem>
+                        <templateId/>
+                        <id root="1.2.840.114350.1.13.321.1.7.2.768076" extension="0d705e3d-f0f4-44d9-9643-10efafe15ef9"/>
+                        <problemCode code="77386006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pregnant"/>
+                        <problemEffectiveTime high="20161212" low="20161212"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.88.12.80.68"/>
+                    </problem>
+                </problems>
+                <substanceAdministrationEvents>
+                    <substanceAdministrationEvent>
+                        <templateId root="2.16.840.1.113883.6.96"/>
+                        <id root="41f9a494-9659-4de7-9431-1588c10418c0" extension="9d6b36ea-b986-4d33-9ef5-4cc6a26d2fe7"/>
+                        <substanceAdministrationGeneralPurpose code="completed" codeSystem="2.16.840.1.113883.6.1"/>
+                        <substance>
+                            <templateId root="2.16.840.1.113883.3.1829.11.13.6.2"/>
+                            <id root="420b1f9f-0c8a-4dce-9de2-c278298d13b3" extension="df253478-b49a-48ad-9e3e-c9a5aa55e36d"/>
+                            <substanceCode code="999" codeSystem="1.1.1.1"/>
+                        </substance>
+                        <administrationTimeInterval/>
+                    </substanceAdministrationEvent>
+                </substanceAdministrationEvents>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns2:cdsInput>

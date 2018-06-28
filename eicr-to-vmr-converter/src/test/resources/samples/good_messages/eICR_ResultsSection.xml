@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?><!--Title: "Sample file for the PHCR Pertussis Report"
+    Version: Draft Chlamydia Positive Example
+    Revision History: 11/09/2015  pre-publication 
+  Specification: eICR CDA IG - C-CDA Templates Only
+This sample document was created Eric M Haas, Health eData Inc, on behalf of  HL7 PHER Working Group--><!-- The following sample document depicts a fictional characterâ€™s health summary. Any resemblance to a real person is coincidental. --><!-- To illustrate as many data elements as possible, the clinical scenario may not be entirely plausible. --><!--The schema file (CDA_SDTC.xsd) is available at http://gforge.hl7.org/svn/strucdoc/trunk/CDA_SDTC which contains all the SDWG approved extensions.--><?xml-stylesheet type="text/xsl" href="../transform/CDA_EICR.xsl"?>
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:hl7-org:v3 ../../schemas/cda_schema/infrastructure/cda/CDA_SDTC.xsd"
+ xmlns="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:voc="urn:hl7-org:v3/voc">
+
+	<!-- 
+********************************************************
+CDA Header
+********************************************************
+-->
+	<!-- US Realm Header template -->
+	<realmCode code="US"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- Conformant to Initial Public Health Case Report -->
+	<templateId root="2.16.840.1.113883.10.20.15.2" extension="2015-11-28"/>
+	<!-- globally unique document ID (extension) is scoped by vendor/software -->
+	<id root="db734647-fc99-424c-a864-7e3cda82e703"/>
+	<!-- Document Code -->
+	<code code="55751-2" codeSystem="2.16.840.1.113883.6.1" displayName="Public Health Case report"/>
+	<title representation="TXT" mediaType="text/plain">Initial Public Health Case Report</title>
+	<effectiveTime value="20151107094421+0000"/>
+	<confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<recordTarget typeCode="RCT" contextControlCode="OP">
+		<!--patient demographic information -->
+		<patientRole classCode="PAT">
+			<!-- Fake root for sample. -->
+			<id extension="123453" root="2.16.840.1.113883.19.5"/>
+			<!--SSN-->
+			<id extension="444-333-3333" root="2.16.840.1.113883.4.1"/>
+			<!--Could have multiple addresses-->
+			<addr use="H">
+				<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">2222 Home Street</streetAddressLine>
+				<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+				<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+				<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+				<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+			</addr>
+			<telecom value="tel:+1-(555)555-2003" use="HP"/>
+			<telecom value="tel:+1(555)555-2004" use="WP"/>
+			<patient classCode="PSN" determinerCode="INSTANCE">
+				<name use="L">
+					<given partType="GIV" representation="TXT" mediaType="text/plain">Adam</given>
+					<given qualifier="IN" partType="GIV" representation="TXT" mediaType="text/plain">A</given>
+					<family partType="FAM" representation="TXT" mediaType="text/plain">Everyman</family>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19741124"/>
+				<!--deceased indicator and deceased datetime go here-->
+				<sdtc:deceasedInd value="false"/>
+				<!--sdtc:deceasedTime value="20151128"/-->
+				<raceCode code="2106-3" displayName="White" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
+				<ethnicGroupCode code="2186-5" displayName="Not Hispanic or Latino" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
+				<!--Guardian information-->
+				<guardian classCode="GUARD">
+					<addr use="H">
+						<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">2222 Home Street</streetAddressLine>
+						<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+						<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+						<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+						<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+					</addr>
+					<telecom value="tel:+1(555)555-2003" use="HP"/>
+					<guardianPerson classCode="PSN" determinerCode="INSTANCE">
+						<name use="L">
+							<given partType="GIV" representation="TXT" mediaType="text/plain">Eve</given>
+							<given qualifier="IN" partType="GIV" representation="TXT" mediaType="text/plain">E</given>
+							<family partType="FAM" representation="TXT" mediaType="text/plain">Everywoman</family>
+						</name>
+					</guardianPerson>
+				</guardian>
+				<languageCommunication>
+					<languageCode code="eng"/>
+					<!-- "eng" is ISO 639-2 alpha-3 code for "English" -->
+					<modeCode code="ESP" displayName="Expressed spoken" codeSystem="2.16.840.1.113883.5.60" codeSystemName="LanguageAbilityMode"/>
+					<proficiencyLevelCode code="G" displayName="Good" codeSystem="2.16.840.1.113883.5.61" codeSystemName="LanguageAbilityProficiency"/>
+					<!-- Patient's preferred language -->
+					<preferenceInd value="true"/>
+				</languageCommunication>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT" contextControlCode="OP">
+		<time value="20151107094421+0000"/>
+		<!--Author/authenticator may be software or may be a provider such as
+"infection control professional".-->
+		<assignedAuthor classCode="ASSIGNED">
+			<!--Id for authoring device - made up application OID-->
+			<id root="2.16.840.1.113883.3.72.5.20"/>
+			<!--authoring device address - may or may not be same as facility where care provided for case-->
+			<addr>
+				<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">1002 Healthcare Drive</streetAddressLine>
+				<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+				<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+				<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+				<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+			</addr>
+			<telecom value="tel:+1-(555)555-1002 (ext=110)" use="WP"/>
+			<assignedAuthoringDevice classCode="DEV" determinerCode="INSTANCE">
+				<manufacturerModelName displayName="Acme" representation="TXT" mediaType="text/plain"/>
+				<softwareName displayName="Acme EHR" representation="TXT" mediaType="text/plain"/>
+			</assignedAuthoringDevice>
+		</assignedAuthor>
+	</author>
+	<!-- The custodian of the CDA document is the generator of the document -->
+	<custodian typeCode="CST">
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+				<id extension="88888888" root="2.16.840.1.113883.4.6"/>
+				<name>Level Seven Healthcare, Inc</name>
+				<telecom use="WP" value="tel:+1(555)555-3001"/>
+				<addr>
+					<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">4444 Healthcare Drive</streetAddressLine>
+					<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+					<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+					<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+					<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!--
+********************************************************
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis and laboratory results that trigger a case report t- table version identifer (= value set version) and code, code system oid, code system version, display name.  thypically these are SNOMED CT or ICD-9/10 or LOINC codes
+
+********************************************************
+
+	<documentationOf>
+		<serviceEvent classCode="CASE">
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" codeSystemVersion="20150930" displayName="Pertussis (disorder)" sdtc:valueSetVersion="20151111"/>
+			<effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+
+********************************************************
+
+documentationOf -contains the MU3 required trigger code information for problems and diagnosis  that trigger - code row identifer and code, code system oid, display name,  identifier would be unique for each table version. thypically these are SNOMED CT or ICD-9/10 codes
+
+		<documentationOf>
+		<serviceEvent classCode="CASE">
+		    <id root="87136C74-4E70-476F-950A-084D0DAA66B9"/>
+			<code code="27836007" codeSystem="2.16.840.1.113883.6.96" codeSystemVersion="20150930" displayName="Pertussis (disorder)"/>
+            <effectiveTime>
+				<low value="20151107"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+
+********************************************************
+-->
+	<!--
+********************************************************
+ComponentOf -contains the provider and faclity infomation for the case-
+
+********************************************************
+-->
+	<componentOf typeCode="COMP">
+		<encompassingEncounter classCode="ENC" moodCode="EVN">
+			<!--encounter ID-->
+			<id root="2.16.840.1.113883.19" extension="9937012"/>
+			<!--ActClassEncounterCodes - high level -->
+			<code code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatory" codeSystemName="HL7 ActEncounterCode"/>
+			<effectiveTime operator="I">
+				<low value="20151107" inclusive="true"/>
+				<high value="20151107" inclusive="true"/>
+			</effectiveTime>
+			<!--provider in charge of care when case reported-->
+			<responsibleParty typeCode="RESP">
+				<assignedEntity classCode="ASSIGNED">
+					<id extension="6666666666666" root="2.16.840.1.113883.4.6"/>
+					<addr>
+						<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">1002 Healthcare Drive</streetAddressLine>
+						<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+						<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+						<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+						<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+					</addr>
+					<telecom use="WP" value="tel:+1(555)555-1002"/>
+					<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+						<name>
+							<given partType="GIV" representation="TXT" mediaType="text/plain">Henry</given>
+							<family partType="FAM" representation="TXT" mediaType="text/plain">Seven</family>
+							<suffix qualifier="AC" partType="SFX" representation="TXT" mediaType="text/plain">M.D.</suffix>
+						</name>
+					</assignedPerson>
+					<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+						<name>HC  Doctors</name>
+						<addr>
+							<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">4444 Healthcare Drive</streetAddressLine>
+							<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+							<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+							<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+							<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+						</addr>
+					</representedOrganization>
+				</assignedEntity>
+			</responsibleParty>
+			<!-- Information about facility where care was provided when case reported-->
+			<location typeCode="LOC">
+				<healthCareFacility classCode="SDLOC">
+					<id extension="77777777777" root="2.16.840.1.113883.4.6"/>
+					<!--facility type-->
+					<code code="OF" codeSystem="2.16.840.1.113883.1.11.17660" displayName="Outpatient facility"/>
+					<!-- facility location within larger healthcare organization e.g Kaiser Vacaville within Kaiser North-->
+					<location classCode="PLC" determinerCode="INSTANCE">
+						<addr>
+							<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">11000 Lakeside Drive</streetAddressLine>
+							<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+							<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+							<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+							<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+						</addr>
+					</location>
+					<!--facitiy contact information-->
+					<serviceProviderOrganization classCode="ORG" determinerCode="INSTANCE">
+						<name>Community Health and Hospitals</name>
+						<telecom use="WP" value="tel: 1+(555)-555-5000"/>
+						<addr>
+							<streetAddressLine partType="SAL" representation="TXT" mediaType="text/plain">100 Enterprise Blvd</streetAddressLine>
+							<city partType="CTY" representation="TXT" mediaType="text/plain">Ann Arbor</city>
+							<state partType="STA" representation="TXT" mediaType="text/plain">MI</state>
+							<postalCode partType="ZIP" representation="TXT" mediaType="text/plain">99999</postalCode>
+							<country partType="CNT" representation="TXT" mediaType="text/plain">US</country>
+						</addr>
+					</serviceProviderOrganization>
+				</healthCareFacility>
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<component typeCode="COMP" contextConductionInd="true">
+		<structuredBody classCode="DOCBODY" moodCode="EVN">
+			<component>
+	<!--
+********************************************************
+Results Section (V3)
+********************************************************
+-->
+	<section>
+		<templateId root="2.16.840.1.113883.10.20.22.2.3.1" extension="2015-08-01"/>
+		<code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RELEVANT DIAGNOSTIC TESTS AND/OR LABORATORY DATA"/>
+		<title>Results</title>
+		<text xmlns:t="urn:hl7-org:v3">
+			<paragraph>Ordered Test/Battery: CBC W Auto Differential panel in Blood</paragraph>
+			<table border="1" width="100%">
+				<thead>
+					<tr>
+						<th>Test</th>
+						<th>Result Value</th>
+						<th>Reference Range</th>
+						<th>Interpretation</th>
+						<th>date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Hematocrit</td>
+						<td>35.3  %</td>
+						<td>34.9 - 44.5</td>
+						<td>L</td>
+						<td>20151107</td>
+					</tr>
+					<tr>
+						<td>Lymphocytes [#/​volume] in Blood by Automated count</td>
+						<td>5.2  10*3/uL</td>
+						<td>1.0 - 4.8</td>
+						<td>H</td>
+						<td>20151107</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/>
+			<paragraph>Ordered Test/Battery: Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Urine by DNA probe</paragraph>
+			<table border="1" width="100%">
+				<thead>
+					<tr>
+						<th>Test</th>
+						<th>Result Value</th>
+						<th>Reference Range</th>
+						<th>Interpretation</th>
+						<th>date</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Chlamydia trachomatis rRNA [Presence] in Urine by Probe and target amplification method</td>
+						<td>Detected</td>
+						<td>Not Detected</td>
+						<td>A</td>
+						<td>20151107</td>
+					</tr>
+					<tr>
+						<td>Neisseria gonorrhoeae rRNA [Presence] in Urine by Probe and target amplification method</td>
+						<td>Not Detected</td>
+						<td>Not Detected</td>
+						<td>N</td>
+						<td>20151107</td>
+					</tr>
+				</tbody>
+			</table>
+			<br/>
+		</text>
+		<entry typeCode="DRIV">
+			<organizer classCode="BATTERY" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.1" extension="2014-06-09"/>
+				<id root="7d5a02b0-67a4-11db-bd13-0800200c9a66"/>
+				<code code="57021-8" displayName="CBC W Auto Differential panel in Blood" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+				<statusCode code="completed"/>
+				<component>
+					<observation classCode="OBS" moodCode="EVN">
+						<!-- ** Result observation **There will be a lot more observations but I have only a couple -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+						<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234a"/>
+						<code code="20570-8" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+						<statusCode code="completed"/>
+						<effectiveTime value="20151107"/>
+						<value xsi:type="IVL_PQ">
+							<low value="1.0" unit="10*3/uL"/>
+							<high value="4.8" unit="10*3/uL"/>
+						</value>
+						<interpretationCode code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+						<!--	 Should include referenceRange for all numeric results -->
+						<referenceRange>
+							<observationRange>
+								<text>Low</text>
+								<value xsi:type="IVL_PQ">
+									<low value="34.9" unit="%"/>
+									<high value="44.5" unit="%"/>
+								</value>
+								<interpretationCode code="L" codeSystem="2.16.840.1.113883.5.83"/>
+							</observationRange>
+						</referenceRange>
+					</observation>
+				</component>
+				<component>
+					<observation classCode="OBS" moodCode="EVN">
+						<!-- ** Result observation **There will be a lot more observations but I have only a couple -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+						<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234f"/>
+						<code code="20570-8" displayName="Hematocrit" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+						<statusCode code="completed"/>
+						<effectiveTime value="20151107"/>
+						<value xsi:type="PQ" value="35.3" unit="%"/>
+						<interpretationCode code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+						<!--	 Should include referenceRange for all numeric results -->
+						<referenceRange>
+							<observationRange>
+								<text>Low</text>
+								<value xsi:type="IVL_PQ">
+									<low value="34.9" unit="%"/>
+									<high value="44.5" unit="%"/>
+								</value>
+								<interpretationCode code="L" codeSystem="2.16.840.1.113883.5.83"/>
+							</observationRange>
+						</referenceRange>
+					</observation>
+				</component>
+				<component>
+					<observation classCode="OBS" moodCode="EVN">
+						<!-- ** Result observation **There will be a lot more observations but I have only a couple -->
+						<templateId root="2.16.840.1.113883.10.20.22.4.2" extension="2015-08-01"/>
+						<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e2343"/>
+						<code code="731-0" displayName="Lymphocytes [#/​volume] in Blood by Automated count" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+						<statusCode code="completed"/>
+						<effectiveTime value="20151107"/>
+						<value xsi:type="PQ" value="5.2" unit="10*3/uL"/>
+						<interpretationCode code="H" codeSystem="2.16.840.1.113883.1.11.78"/>
+						<!--	 Should include referenceRange for all numeric results -->
+						<referenceRange>
+							<observationRange>
+								<text>Low</text>
+								<value xsi:type="IVL_PQ">
+									<low value="1.0" unit="10*3/uL"/>
+									<high value="4.8" unit="10*3/uL"/>
+								</value>
+								<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+							</observationRange>
+						</referenceRange>
+					</observation>
+				</component>
+			</organizer>
+		</entry>
+		<entry>
+			<organizer classCode="BATTERY" moodCode="EVN">
+				<templateId root="2.16.840.1.113883.10.20.22.4.1"/>
+				<id root="a4307cb2-b3b4-4f42-be03-1d9077376f4a"/>
+				<!--This is a GC + CT Aptima 2 combo and same a pair of observation codes-->
+				<code code="45074-2" displayName="Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Urine by DNA probe" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+				<statusCode code="completed"/>
+				<effectiveTime value="20151107"/>
+				<component>
+					<observation classCode="OBS" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+						<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ac"/>
+						<code code="A55" displayName="Chlamydial lymphogranuloma (venereum)" codeSystem="2.16.840.1.113883.6.90" codeSystemName="LOINC"/>
+						<statusCode code="completed"/>
+						<effectiveTime value="20151107"/>
+						<value xsi:type="CO" code="260373001" codeSystemName="SNOMED-CT" displayName="Detected" codeSystem="2.16.840.1.113883.6.96"/>
+						<interpretationCode code="A" codeSystem="2.16.840.1.113883.5.83"/>
+						<referenceRange>
+							<observationRange>
+								<text>Not Detected value is a normal result</text>
+								<value xsi:type="CO" code="260415000" codeSystemName="SNOMED-CT" displayName="Not Detected" codeSystem="2.16.840.1.113883.6.96"/>
+								<!-- This interpretation code denotes that this reference range is for normal results. This is not the interpretation a specific patient value-->
+								<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+							</observationRange>
+						</referenceRange>
+					</observation>
+				</component>
+				<component>
+					<observation classCode="OBS" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.10.20.22.4.2"/>
+						<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ab"/>
+						<code code="60256-5" displayName="Neisseria gonorrhoeae rRNA [Presence] in Urine by Probe and target amplification method" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+						<statusCode code="completed"/>
+						<effectiveTime value="20151107"/>
+						<value xsi:type="CO" code="260415000" codeSystemName="SNOMED-CT" displayName="Not Detected" codeSystem="2.16.840.1.113883.6.96"/>
+						<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+						<referenceRange>
+							<observationRange>
+								<text>Not Detected value is a normal result</text>
+								<value xsi:type="CO" code="260415000" codeSystemName="SNOMED-CT" displayName="Not Detected" codeSystem="2.16.840.1.113883.6.96"/>
+								<!-- This interpretation code denotes that this reference range is for normal results. This is not the interpretation a specific patient value-->
+								<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+							</observationRange>
+						</referenceRange>
+					</observation>
+				</component>
+			</organizer>
+		</entry>
+	</section>
+</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
