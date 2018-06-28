@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="2.16.840.1.113883.19.5" extension="6a3d5a27-e110-478e-a0d6-ae0b68907615"/>
+            <demographics>
+                <birthTime value="19741124"/>
+                <gender code="M" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="H">
+                    <part type="SAL" value="5101 Peachtree St NE"/>
+                    <part type="CTY" value="Atlanta"/>
+                    <part type="STA" value="GA"/>
+                    <part type="ZIP" value="30302"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <address use="WP">
+                    <part type="SAL" value="5101 Peachtree St NE"/>
+                    <part type="CTY" value="Atlanta"/>
+                    <part type="STA" value="GA"/>
+                    <part type="ZIP" value="30302"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-(404)555-1212" use="HP"/>
+                <telecom value="tel:+1(555)555-2003" use="WP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="2.16.840.1.113883.4.6" extension="03875808-564e-4b20-9582-fd9108a6fe95"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="4646 Brown Rd"/>
+                        <part type="CTY" value="Salem"/>
+                        <part type="STA" value="MA"/>
+                        <part type="ZIP" value="02368"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <encounterEvents>
+                    <encounterEvent>
+                        <templateId root="2.16.840.1.113883.3.1829.11.4.3.8"/>
+                        <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" extension="d48700fe-19a9-4d24-898c-f7564d301c9f"/>
+                        <encounterType code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Office outpatient visit 15 minutes"/>
+                        <encounterEventTime high="20151107" low="20151107"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <problem>
+<templateId root="2.16.840.1.113883.3.1829.11.7.2.20"/>
+<id root="db734647-fc99-424c-a864-7e3cda82e704" extension="7b0c70bc-8a90-4e83-b4ed-0db39f1c94f7"/>
+<problemCode code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pertussis (disorder)"/>
+<problemEffectiveTime high="20151107" low="20151107"/>
+<diagnosticEventTime low="20151107"/>
+<problemStatus code="completed" codeSystem="2.16.840.1.113883.3.1937.98.5.8" codeSystemName="SNOMED-CT"/>
+                            </problem>
+                        </relatedClinicalStatement>
+                    </encounterEvent>
+                </encounterEvents>
+                <observationResults>
+                    <observationResult>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="37f76c51-6411-4e1d-8a37-957fd49d2cef" extension="56556ccf-6ebb-45dc-b64d-166fd646c7cd"/>
+                        <observationFocus code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment detail"/>
+                    </observationResult>
+                </observationResults>
+                <observationOrders>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="7d5a02b0-67a4-11db-bd13-0800200c9a66" extension="eeae97a3-1273-4fa4-881c-fe5ce5a2ce90"/>
+                        <observationFocus code="57021-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CBC W Auto Differential panel in Blood"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234f" extension="0c79b59a-4882-4ef5-81af-1de214dab0af"/>
+<observationFocus code="20570-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hematocrit"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <physicalQuantity value="35.3" unit="%"/>
+</observationValue>
+<interpretation code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234f" extension="4a451ab2-c8f7-48de-808b-8c14e46edef9"/>
+<observationFocus code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lymphocytes [#/​volume] in Blood by Automated count"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <physicalQuantity value="5.2" unit="10*3/uL"/>
+</observationValue>
+<interpretation code="H" codeSystem="2.16.840.1.113883.1.11.78"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="a4307cb2-b3b4-4f42-be03-1d9077376f4a" extension="e9ee669a-9740-4af6-b561-24350beb3762"/>
+                        <observationFocus code="23826-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="B pert DNA XXX Ql PCR"/>
+                        <orderEventTime high="20151107" low="20151107"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ac" extension="61ef0ff3-94b7-4e98-a845-4e9b1a1c36d1"/>
+<observationFocus code="23826-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="B pert DNA XXX Ql PCR"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <concept code="10828004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Positive"/>
+</observationValue>
+<interpretation code="A" codeSystem="2.16.840.1.113883.5.83"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                </observationOrders>
+                <problems>
+                    <problem>
+                        <templateId root="2.16.840.1.113883.3.1829.11.7.2.21"/>
+                        <id root="ab1791b0-5c71-11db-b0de-0800200c9a66" extension="67354464-1264-4ca1-a51e-34140ee6eef8"/>
+                        <problemCode code="35064005" codeSystem="2.16.840.1.113883.6.96" displayName="Dark stools (finding)"/>
+                        <problemEffectiveTime high="20151101" low="20151101"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.1937.98.5.8"/>
+                    </problem>
+                    <problem>
+                        <templateId root="2.16.840.1.113883.3.1829.11.7.2.21"/>
+                        <id root="ab1791b0-5c71-11db-b0de-0800200c9a66" extension="73c559df-f4ae-4903-9934-abfc928a0a63"/>
+                        <problemCode code="43025008" codeSystem="2.16.840.1.113883.6.96" displayName="Paroxysmal cough (finding)"/>
+                        <problemEffectiveTime high="20151104" low="20151104"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.1937.98.5.8"/>
+                    </problem>
+                </problems>
+                <substanceAdministrationEvents>
+                    <substanceAdministrationEvent>
+                        <templateId root="2.16.840.1.113883.6.96"/>
+                        <id root="6c844c75-aa34-411c-b7bd-5e4a9f206e29" extension="d9000534-58de-4942-a418-7803e2a74299"/>
+                        <substanceAdministrationGeneralPurpose code="completed" codeSystem="2.16.840.1.113883.6.1"/>
+                        <substance>
+                            <templateId root="2.16.840.1.113883.3.1829.11.13.6.2"/>
+                            <id root="2a620155-9d11-439e-92b3-5d9815ff4ee8" extension="aa07606c-a12c-46b1-9fa9-a59d569bb1b1"/>
+                            <substanceCode code="248656" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Azithromycin 500 MG Oral Tablet"/>
+                        </substance>
+                        <doseQuantity lowValue="1.0" lowUnit="1" highValue="1.0" highUnit="1"/>
+                        <deliveryRoute code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL"/>
+                        <administrationTimeInterval high="" low=""/>
+                    </substanceAdministrationEvent>
+                </substanceAdministrationEvents>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns3:cdsInput>

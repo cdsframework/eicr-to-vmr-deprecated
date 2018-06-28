@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="12345" extension="ba66d84d-b16e-4c31-8088-909480294a90"/>
+            <demographics>
+                <birthTime value="19741124"/>
+                <gender code="M" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="H">
+                    <part type="SAL" value="5101 Peachtree St NE"/>
+                    <part type="CTY" value="Atlanta"/>
+                    <part type="STA" value="GA"/>
+                    <part type="ZIP" value="30302"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <address use="WP">
+                    <part type="SAL" value="5101 Peachtree St NE"/>
+                    <part type="CTY" value="Atlanta"/>
+                    <part type="STA" value="GA"/>
+                    <part type="ZIP" value="30302"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-(404)555-1212" use="HP"/>
+                <telecom value="tel:+1(555)555-2003" use="WP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="12345" extension="662e0dd7-26ac-4abf-9183-a9a453c97d4f"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="4646 Brown Rd"/>
+                        <part type="CTY" value="Salem"/>
+                        <part type="STA" value="MA"/>
+                        <part type="ZIP" value="02368"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <observationResults/>
+                <problems>
+                    <problem>
+                        <templateId root="2.16.840.1.113883.3.1829.11.7.2.21"/>
+                        <id root="12345" extension="1229185f-8c8a-490b-955f-dd8ee79f7a81"/>
+                        <problemCode code="35064005" codeSystem="2.16.840.1.113883.6.96" displayName="Dark stools (finding)"/>
+                        <problemEffectiveTime high="20151101" low="20151101"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.1937.98.5.8"/>
+                    </problem>
+                    <problem>
+                        <templateId root="2.16.840.1.113883.3.1829.11.7.2.21"/>
+                        <id root="12345" extension="6a3d1f9f-ff92-4ad2-8df7-10754f99825c"/>
+                        <problemCode code="27836007" codeSystem="2.16.840.1.113883.6.96" displayName="Pertussis (disorder)"/>
+                        <problemEffectiveTime high="20151104" low="20151104"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.1937.98.5.8"/>
+                    </problem>
+                </problems>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns3:cdsInput>

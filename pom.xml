@@ -8,7 +8,6 @@
   <modules>
     <module>eicr-to-vmr-converter</module>
     <module>eicr-support-conversion</module>
-    <module>webapp-testharness</module>
   </modules>
   <packaging>pom</packaging>
 

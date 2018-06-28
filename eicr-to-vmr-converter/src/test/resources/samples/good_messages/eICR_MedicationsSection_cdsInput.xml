@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="2.16.840.1.113883.19.5" extension="9bf399dd-45e1-48c1-81a7-03b0c210959e"/>
+            <demographics>
+                <birthTime value="19741124"/>
+                <gender code="M" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="H">
+                    <part type="SAL" value="2222 Home Street"/>
+                    <part type="CTY" value="Ann Arbor"/>
+                    <part type="STA" value="MI"/>
+                    <part type="ZIP" value="99999"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-(555)555-2003" use="HP"/>
+                <telecom value="tel:+1(555)555-2004" use="WP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="2.16.840.1.113883.4.6" extension="ffeac9b5-23e4-4ac8-85ba-347b55333946"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="11000 Lakeside Drive"/>
+                        <part type="CTY" value="Ann Arbor"/>
+                        <part type="STA" value="MI"/>
+                        <part type="ZIP" value="99999"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <observationResults/>
+                <substanceAdministrationEvents>
+                    <substanceAdministrationEvent>
+                        <templateId root="2.16.840.1.113883.6.96"/>
+                        <id root="6c844c75-aa34-411c-b7bd-5e4a9f206e29" extension="0c28baca-8a7d-4ca8-b864-8689c8acad73"/>
+                        <substanceAdministrationGeneralPurpose code="completed" codeSystem="2.16.840.1.113883.6.1"/>
+                        <substance>
+                            <templateId root="2.16.840.1.113883.3.1829.11.13.6.2"/>
+                            <id root="2a620155-9d11-439e-92b3-5d9815ff4ee8" extension="a400d474-3a67-4ba5-815d-52c9b2924c12"/>
+                            <substanceCode code="248656" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Azithromycin 500 MG Oral Tablet"/>
+                        </substance>
+                        <doseQuantity lowValue="1.0" lowUnit="mg" highValue="1.0" highUnit="mg"/>
+                        <deliveryRoute code="C38288" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" displayName="ORAL"/>
+                        <administrationTimeInterval high="20151107" low="20151107"/>
+                    </substanceAdministrationEvent>
+                </substanceAdministrationEvents>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns3:cdsInput>

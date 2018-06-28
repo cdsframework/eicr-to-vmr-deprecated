@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="2.16.840.1.113883.19.5" extension="6fb7e7e4-da92-4dbe-80be-6bfa27149355"/>
+            <demographics>
+                <birthTime value="19741124"/>
+                <gender code="M" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="H">
+                    <part type="SAL" value="2222 Home Street"/>
+                    <part type="CTY" value="Ann Arbor"/>
+                    <part type="STA" value="MI"/>
+                    <part type="ZIP" value="99999"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-(555)555-2003" use="HP"/>
+                <telecom value="tel:+1(555)555-2004" use="WP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="2.16.840.1.113883.4.6" extension="6f1ee763-d8bc-4162-ac59-bce70b4dc554"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="11000 Lakeside Drive"/>
+                        <part type="CTY" value="Ann Arbor"/>
+                        <part type="STA" value="MI"/>
+                        <part type="ZIP" value="99999"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <observationResults/>
+                <observationOrders>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="7d5a02b0-67a4-11db-bd13-0800200c9a66" extension="7778d81b-ed49-471e-b02f-93b4f38c9e54"/>
+                        <observationFocus code="57021-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CBC W Auto Differential panel in Blood"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234a" extension="cc9937e3-74dc-4ec0-a4ec-772f3ad64c68"/>
+<observationFocus code="20570-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hematocrit"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <physicalQuantityRange lowValue="1.0" lowUnit="10*3/uL" highValue="4.8" highUnit="10*3/uL"/>
+</observationValue>
+<interpretation code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e234f" extension="4f0de78a-ecf0-4587-8fa6-d9a0069677b7"/>
+<observationFocus code="20570-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Hematocrit"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <physicalQuantity value="35.3" unit="%"/>
+</observationValue>
+<interpretation code="L" codeSystem="2.16.840.1.113883.1.11.78"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="7c0704bb-9c40-41b5-9c7d-26b2d59e2343" extension="be88a7d8-fe9c-42cf-9f6a-25ca9d38fcd4"/>
+<observationFocus code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Lymphocytes [#/​volume] in Blood by Automated count"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <physicalQuantity value="5.2" unit="10*3/uL"/>
+</observationValue>
+<interpretation code="H" codeSystem="2.16.840.1.113883.1.11.78"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="a4307cb2-b3b4-4f42-be03-1d9077376f4a" extension="bc400a0f-4594-46b9-bb98-6c8d3791f830"/>
+                        <observationFocus code="45074-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Chlamydia trachomatis+Neisseria gonorrhoeae rRNA [Presence] in Urine by DNA probe"/>
+                        <orderEventTime high="20151107" low="20151107"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ac" extension="e8317eef-1d37-459b-99ba-2934167699f4"/>
+<observationFocus code="A55" codeSystem="2.16.840.1.113883.6.90" codeSystemName="LOINC" displayName="Chlamydial lymphogranuloma (venereum)"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <concept code="260373001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Detected"/>
+</observationValue>
+<interpretation code="A" codeSystem="2.16.840.1.113883.5.83"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ab" extension="d8d7931a-61ac-4ede-8985-0ef6fb3757c4"/>
+<observationFocus code="60256-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Neisseria gonorrhoeae rRNA [Presence] in Urine by Probe and target amplification method"/>
+<observationEventTime high="20151107" low="20151107"/>
+<observationValue>
+    <concept code="260415000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Not Detected"/>
+</observationValue>
+<interpretation code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                </observationOrders>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns3:cdsInput>

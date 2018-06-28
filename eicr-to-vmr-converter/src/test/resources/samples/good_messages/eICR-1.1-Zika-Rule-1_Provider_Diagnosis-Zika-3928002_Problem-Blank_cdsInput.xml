@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns3:cdsInput xmlns:ns2="org.opencds.vmr.v1_0.schema.cdsoutput" xmlns:ns3="org.opencds.vmr.v1_0.schema.cdsinput" xmlns:ns4="org.opencds.vmr.v1_0.schema.vmr" xmlns:ns5="org.opencds.vmr.v1_0.schema.cdsinput.specification">
+    <templateId root="2.16.840.1.113883.3.1829.11.1.1.8"/>
+    <cdsContext>
+        <cdsSystemUserType code="PROVIDER_FACILITY" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+        <cdsSystemUserPreferredLanguage code="en" codeSystem="2.16.840.1.113883.6.99" displayName="English"/>
+    </cdsContext>
+    <vmrInput>
+        <templateId root="2.16.840.1.113883.3.1829.11.1.2.18"/>
+        <patient>
+            <templateId root="2.16.840.1.113883.3.1829.11.2.3.3"/>
+            <id root="2.16.840.1.113883.19.5" extension="5b691bdc-9f0e-4100-bc2d-83de6966469a"/>
+            <demographics>
+                <birthTime value="19900422"/>
+                <gender code="F" codeSystem="2.16.840.1.113883.1.11.1"/>
+                <address use="H">
+                    <part type="SAL" value="861 East 1300 South"/>
+                    <part type="CTY" value="Salt Lake City"/>
+                    <part type="STA" value="UT"/>
+                    <part type="ZIP" value="84105"/>
+                    <part type="CPA" value="Salt Lake County"/>
+                    <part type="CNT" value="US"/>
+                </address>
+                <telecom value="tel:+1-801-588-3498" use="HP"/>
+            </demographics>
+            <relatedEntity>
+                <facility>
+                    <templateId root="2.16.840.1.113883.3.1829.11.16.2.20"/>
+                    <id root="2.16.840.1.113883.4.6" extension="78229e63-b9ef-4aae-9f11-6723984a79f1"/>
+                    <entityType code="FAC" codeSystem="2.16.840.1.113883.3.795.5.4.12.2.1"/>
+                    <address>
+                        <part type="SAL" value="Clinic Bldg A, Suite 200, 288 North 1460 West"/>
+                        <part type="CTY" value="Salt Lake City"/>
+                        <part type="STA" value="UT"/>
+                        <part type="ZIP" value="84116"/>
+                        <part type="CPA" value="Salt Lake County"/>
+                        <part type="CNT" value="US"/>
+                    </address>
+                </facility>
+            </relatedEntity>
+            <clinicalStatements>
+                <encounterEvents>
+                    <encounterEvent>
+                        <templateId root="2.16.840.1.113883.3.1829.11.4.3.8"/>
+                        <id root="2a620155-9d11-439e-92b3-5d9815ff4de8" extension="26710627-9f53-488a-8644-f2b5b322c3e0"/>
+                        <encounterType code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Office outpatient visit 15 minutes"/>
+                        <encounterEventTime high="20161107" low="20161107"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <problem>
+<templateId root="2.16.840.1.113883.3.1829.11.7.2.20"/>
+<id root="db734647-fc99-424c-a864-7e3cda82e705" extension="e743a234-0ed6-420b-aaf5-d370baddd7f1"/>
+<problemCode code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pertussis (disorder)"/>
+<problemEffectiveTime high="20161107" low="20161107"/>
+<diagnosticEventTime low="20161107"/>
+<problemStatus code="completed" codeSystem="2.16.840.1.113883.3.1937.98.5.8" codeSystemName="SNOMED-CT"/>
+                            </problem>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <problem>
+<templateId root="2.16.840.1.113883.3.1829.11.7.2.20"/>
+<id root="db734647-fc99-424c-a864-7e3cda82e704" extension="c95fa41b-3191-4e19-a71a-8e369b52aa21"/>
+<problemCode code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="A non-trigger code diagnosis (disorder)"/>
+<problemEffectiveTime high="20161107" low="20161107"/>
+<diagnosticEventTime low="20161107"/>
+<problemStatus code="completed" codeSystem="2.16.840.1.113883.3.1937.98.5.8" codeSystemName="SNOMED-CT"/>
+                            </problem>
+                        </relatedClinicalStatement>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <problem>
+<templateId root="2.16.840.1.113883.3.1829.11.7.2.20"/>
+<id root="db734647-fc99-424c-a864-7e3cda82e704" extension="6cb95cd7-8c1c-4cb0-a865-1fe8cc273a7b"/>
+<problemCode code="3928002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Zika virus disease (disorder)"/>
+<problemEffectiveTime high="20161107" low="20161107"/>
+<diagnosticEventTime low="20161107"/>
+<problemStatus code="completed" codeSystem="2.16.840.1.113883.3.1937.98.5.8" codeSystemName="SNOMED-CT"/>
+                            </problem>
+                        </relatedClinicalStatement>
+                    </encounterEvent>
+                </encounterEvents>
+                <observationResults>
+                    <observationResult>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="923f69bb-ef1e-45b6-a7c0-c40482d599cb" extension="a046fff1-23b5-4e57-bc26-ef25e5d23460"/>
+                        <observationFocus code="76689-9" codeSystem="2.16.840.1.113883.6.1" displayName="Sex Assigned At Birth"/>
+                        <observationEventTime high="19900422" low="19900422"/>
+                        <observationValue>
+                            <concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" displayName="Female"/>
+                        </observationValue>
+                    </observationResult>
+                    <observationResult>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="6049baec-80df-4dea-82b2-345f6546cda3" extension="5588fc96-5498-423f-b6ad-770636bb6c37"/>
+                        <observationFocus code="364703007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Employment detail"/>
+                        <observationValue>
+                            <concept code="2300" codeSystem="2.16.840.1.114222.4.5.314" codeSystemName="Occupation CDC Census 2010" displayName="Preschool and kindergarten teachers"/>
+                        </observationValue>
+                    </observationResult>
+                    <observationResult>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="2.16.840.1.113883.19" extension="6df38d63-aaaf-4ada-823f-f3dfcf3e2b74"/>
+                        <observationFocus code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/>
+                        <observationEventTime high="20161114" low="20161114"/>
+                        <observationValue>
+                            <concept code="77386006" codeSystem="2.16.840.1.113883.6.96" displayName="Pregnant"/>
+                        </observationValue>
+                    </observationResult>
+                </observationResults>
+                <observationOrders>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="a4307cb2-b3b4-4f42-be03-1d9077376f4a" extension="34ee67d7-2b07-460f-add7-cffb8a722c43"/>
+                        <observationFocus code="1234" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Fake Test"/>
+                        <orderEventTime high="20161129" low="20161120"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ad" extension="7572cf63-c249-4a28-a908-cdfd89f55509"/>
+<observationFocus code="1234" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Fake Test"/>
+<observationEventTime high="20161129" low="20161129"/>
+<observationValue>
+    <concept code="10828004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Positive"/>
+</observationValue>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                    <observationOrder>
+                        <templateId root="2.16.840.1.113883.3.795.11.6.3.1"/>
+                        <id root="a4307cb2-b3b4-4f42-be03-1d9077376f4b" extension="24ef62ec-76c4-4d29-ae20-610976c9fdae"/>
+                        <observationFocus code="29663-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dengue virus IgM Ab [Presence] in Serum by Immunoassay"/>
+                        <orderEventTime high="20161129" low="20161120"/>
+                        <relatedClinicalStatement>
+                            <targetRelationshipToSource code="PERT" codeSystem="2.16.840.1.113883.5.1002"/>
+                            <observationResult>
+<templateId root="2.16.840.1.113883.3.1829.11.6.3.15"/>
+<id root="bf9c0a26-4524-4395-b3ce-100450b9c9ac" extension="47123247-be1a-46d7-8522-7efe849f83d1"/>
+<observationFocus code="29663-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Dengue virus IgM Ab [Presence] in Serum by Immunoassay"/>
+<observationEventTime high="20161129" low="20161129"/>
+<observationValue>
+    <concept code="260385009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED-CT" displayName="Negative"/>
+</observationValue>
+                            </observationResult>
+                        </relatedClinicalStatement>
+                    </observationOrder>
+                </observationOrders>
+                <problems>
+                    <problem>
+                        <templateId/>
+                        <id root="ab1791b0-5c71-11db-b0de-0800200c9a66" extension="1d8ab604-d2b1-49b8-9de1-fdbeb1a08eed"/>
+                        <problemCode code="422587007" codeSystem="2.16.840.1.113883.6.96" displayName="Nausea (finding)"/>
+                        <problemEffectiveTime high="20161114" low="20161114"/>
+                        <problemStatus code="active" codeSystem="2.16.840.1.113883.3.1937.98.5.8"/>
+                    </problem>
+                </problems>
+            </clinicalStatements>
+        </patient>
+    </vmrInput>
+</ns3:cdsInput>
